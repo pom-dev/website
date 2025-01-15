@@ -28,14 +28,15 @@ export default function Header() {
             <span className="sr-only">Pepe Ordinals Maxi</span>
             <Image
               alt="Your Company Logo"
-              src="/next.svg"
+              src="/img/pom-no-bg.webp"
               width={32}
               height={32}
               className="h-8 text-foreground w-auto"
             />
 
-            <h1 className="text-xl font-bold">Pepe Ordinals Maxi</h1>
+            <h1 className="text-xl font-bold ms-2">Pepe Ordinals Maxi</h1>
           </Link>
+
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -49,6 +50,42 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-6">
+          <Link href="https://x.com/Pepe_Ordinals" target="_blank">
+            <Image
+              className="w-6 h-6"
+              src="/x.svg"
+              alt="X"
+              width={50}
+              height={50}
+            />
+          </Link>
+          <Link
+            href="https://magiceden.io/ordinals/marketplace/pom"
+            target="_blank"
+          >
+            <Image
+              className="w-8 h-8"
+              src="/magic-eden.svg"
+              alt="Magic Eden"
+              width={80}
+              height={40}
+            />
+          </Link>
+          <Link href="https://discord.gg/pepeordinalsmaxi" target="_blank">
+            <Image
+              className="w-8 h-8"
+              src="/discord.svg"
+              alt="Discord"
+              width={60}
+              height={60}
+            />
+          </Link>
+
+          <span
+            aria-hidden="true"
+            className="mx-4 h-6 w-px bg-gray-200 lg:mx-6"
+          />
+
           <div className="hidden lg:flex lg:gap-x-6">
             {navigation.map((item) => (
               <a

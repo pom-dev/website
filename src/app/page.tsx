@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-
       <Explorer id="explorer" />
-
       <Gifs id="gifs" className="mt-[30rem]" />
     </>
   );

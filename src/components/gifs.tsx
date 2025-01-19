@@ -34,9 +34,15 @@ const gifs = [
   },
 ];
 
-export default function Gifs({ className }: { className?: string }) {
+export default function Gifs({
+  id,
+  className,
+}: {
+  id: string;
+  className?: string;
+}) {
   return (
-    <div className={cn("bg-white py-24 sm:py-32 relative", className)}>
+    <div id={id} className={cn("bg-white py-24 sm:py-32 relative", className)}>
       <div className="pom-pattern absolute h-full w-full z-0"></div>
 
       <div className="relative mx-auto max-w-12xl px-6 lg:px-8 z-10">

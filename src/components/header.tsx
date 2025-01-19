@@ -5,26 +5,33 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-
+import { DiscordIcon, MagicEdenIcon, XIcon } from "./icons";
+import { toast } from "react-hot-toast";
 const navigation = [
-  { name: "EXPLORER", href: "#" },
-  { name: "CUSTOMIZE", href: "#" },
-  { name: "GIFS", href: "#" },
-  { name: "LICENSE", href: "#" },
-  { name: "SHOP", href: "#" },
+  { name: "EXPLORER", href: "/#explorer" },
+  {
+    name: "CUSTOMIZE",
+    href: "",
+    onClick: () => {
+      toast.error("Coming Soon");
+    },
+  },
+  { name: "GIFS", href: "/#gifs" },
+  { name: "LICENSE", href: "/license" },
+  { name: "SHOP", href: "/shop" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-white w-full">
       <nav
         aria-label="Global"
         className="flex items-center justify-between p-6 lg:px-8"
       >
         <div>
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="items-center gap-2 hidden lg:flex">
             <span className="sr-only">Pepe Ordinals Maxi</span>
             <Image
               alt="Your Company Logo"
@@ -51,55 +58,41 @@ export default function Header() {
 
         <div className="flex items-center gap-6">
           <Link href="https://x.com/Pepe_Ordinals" target="_blank">
-            <Image
-              className="w-6 h-6"
-              src="/x.svg"
-              alt="X"
-              width={50}
-              height={50}
-            />
+            <XIcon className="w-6 h-6" />
           </Link>
           <Link
             href="https://magiceden.io/ordinals/marketplace/pom"
             target="_blank"
           >
-            <Image
-              className="w-8 h-8"
-              src="/magic-eden.svg"
-              alt="Magic Eden"
-              width={80}
-              height={40}
-            />
+            <MagicEdenIcon className="w-8 h-8" />
           </Link>
           <Link href="https://discord.gg/pepeordinalsmaxi" target="_blank">
-            <Image
-              className="w-8 h-8"
-              src="/discord.svg"
-              alt="Discord"
-              width={60}
-              height={60}
-            />
+            <DiscordIcon className="w-8 h-8" />
           </Link>
 
           <span
             aria-hidden="true"
-            className="mx-4 h-6 w-px bg-gray-200 lg:mx-6"
+            className="mx-4 h-6 w-px bg-gray-200 lg:mx-6 hidden lg:block"
           />
 
           <div className="hidden lg:flex lg:gap-x-6">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
+                onClick={item.onClick}
                 className="text-sm/6 font-semibold text-gray-900"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <button
               type="button"
+              onClick={() => {
+                toast.error("Coming Soon");
+              }}
               className="rounded bg-gray-900 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-gray-900/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
             >
               CONNECT
@@ -115,14 +108,6 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
-            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -146,12 +131,15 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                <button
+                  type="button"
+                  onClick={() => {
+                    toast.error("Coming Soon");
+                  }}
+                  className="rounded bg-gray-900 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-gray-900/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
                 >
-                  Log in
-                </a>
+                  CONNECT
+                </button>
               </div>
             </div>
           </div>

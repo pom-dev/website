@@ -33,8 +33,8 @@ const people = [
 
 export default function Explorer({ id }: { id: string }) {
   return (
-    <div className="py-24 sm:py-32 relative min-h-screen">
-      <div className="pom-crust absolute h-full w-full z-1 mt-[25rem] pt-24"></div>
+    <div className="py-24 sm:py-32 relative min-h-[50rem]">
+      <div className="pom-crust absolute h-full w-full z-1 mt-[25rem] mb-[25rem] pt-24"></div>
 
       <div id={id} className="relative mx-auto max-w-12xl px-6 lg:px-8 z-10">
         <ul

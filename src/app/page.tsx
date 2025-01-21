@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Hero />
       <Explorer id="explorer" />
-      <Gifs id="gifs" className="mt-[30rem]" />
+      <Gifs id="gifs" />
     </>
   );
 }

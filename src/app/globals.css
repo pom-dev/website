@@ -23,7 +23,7 @@ body {
 .pom-pattern {
   background-image: url("/img/pom.webp");
   background-size: 200px 150px;
-  opacity: 0.1;
+  opacity: 0.05;
   background-repeat: space repeat;
 }
 
